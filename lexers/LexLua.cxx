@@ -535,7 +535,7 @@ void LexerLua::Fold(Sci_PositionU startPos_, Sci_Position length, int initStyle,
 		style = styleNext;
 		styleNext = styler.StyleIndexAt(i + 1);
 		const bool atEOL = (ch == '\r' && chNext != '\n') || (ch == '\n');
-		if (style == SCE_LUA_IDENTIFIER) {
+		if (style == SCE_LUA_WORD) {
 			if (ch == 'i' || ch == 'd' || ch == 'f' || ch == 'e' || ch == 'r' || ch == 'u') {
 				char s[10] = "";
 				for (Sci_Position j = 0; j < 8; j++) {
